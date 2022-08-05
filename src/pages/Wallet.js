@@ -5,9 +5,7 @@ import Header from '../components/Header';
 
 class Wallet extends React.Component {
   render() {
-    const { history, user } = this.props;
-    const { email } = user;
-    console.log(user);
+    const { history } = this.props;
 
     return (
       <>
@@ -19,7 +17,6 @@ class Wallet extends React.Component {
           TrybeWallet
 
         </div>
-        <div>{ email }</div>
 
       </>
     );
@@ -29,9 +26,6 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   history: propTypes.shape({
     push: propTypes.func.isRequired,
-  }).isRequired,
-  user: propTypes.shape({
-    email: propTypes.func.isRequired,
   }).isRequired,
 };
 
