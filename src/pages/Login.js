@@ -30,7 +30,6 @@ class Login extends React.Component {
     event.preventDefault();
     const { dispatch, history } = this.props;
     const { email } = this.state;
-    console.log(email);
     dispatch({ type: 'LOGIN_SUCCESS', payload: { email } });
     history.push('/carteira');
   }
