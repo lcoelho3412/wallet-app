@@ -5,7 +5,13 @@ import { connect } from 'react-redux';
 class Header extends Component {
   render() {
     const { user } = this.props;
+    const { wallet } = this.props;
     const { email } = user;
+    const { expenses } = wallet;
+    console.log(wallet);
+
+    const reduceExpenses = expenses.reduce((acc, curr) => acc + (+curr.exchangeRates[curr.currency].ask * +curr.value), 0);
+
     return (
       <>
         <div>
@@ -19,7 +25,7 @@ class Header extends Component {
         <div>
           <p data-testid="header-currency-field">BRL</p>
           <p data-testid="total-field">
-            0
+            { reduceExpenses.toFixed(2) }
           </p>
         </div>
       </>

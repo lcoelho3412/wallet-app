@@ -3,6 +3,7 @@ import requestAPI from '../../services/api';
 export const REQUEST_CURRENCY = 'REQUEST_CURRENCY';
 export const RECEIVE_CURRENCY_SUCCESS = 'RECEIVE_CURRENCY_SUCCESS';
 export const RECEIVE_CURRENCY_FAILURE = 'RECEIVE_CURRENCY_FAILURE';
+export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 
 export const requestCurrency = () => ({
   type: REQUEST_CURRENCY,
@@ -27,3 +28,8 @@ export function fetchCurrency() {
     }
   };
 }
+
+export const saveNewExpense = (payload) => ({
+  type: SAVE_EXPENSE,
+  payload,
+});
