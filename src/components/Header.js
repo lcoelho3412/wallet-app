@@ -10,7 +10,9 @@ class Header extends Component {
     const { expenses } = wallet;
     console.log(wallet);
 
-    const reduceExpenses = expenses.reduce((acc, curr) => acc + (+curr.exchangeRates[curr.currency].ask * +curr.value), 0);
+    const reduceExpenses = expenses
+      .reduce((acc, curr) => acc + (+curr
+        .exchangeRates[curr.currency].ask * +curr.value), 0);
 
     return (
       <>
@@ -40,5 +42,8 @@ export default connect(mapStateToProps)(Header);
 Header.propTypes = {
   user: propTypes.shape({
     email: propTypes.string.isRequired,
+  }).isRequired,
+  wallet: propTypes.shape({
+    expenses: propTypes.string.isRequired,
   }).isRequired,
 };
