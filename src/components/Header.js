@@ -8,7 +8,6 @@ class Header extends Component {
     const { wallet } = this.props;
     const { email } = user;
     const { expenses } = wallet;
-    console.log(wallet);
 
     const reduceExpenses = expenses
       .reduce((acc, curr) => acc + (+curr
