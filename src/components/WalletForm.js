@@ -41,8 +41,7 @@ class WalletForm extends Component {
   }
 
   render() {
-    const { wallet } = this.props;
-    const { currencies } = wallet;
+    const { currencies } = this.props;
     const { value, currency, method, tag, description } = this.state;
     return (
       <>
@@ -143,13 +142,15 @@ class WalletForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = ({ wallet: { currencies } }) => ({
+  currencies,
+});
 
 WalletForm.propTypes = {
   wallet: propTypes.shape({
-    currencies: propTypes.string.isRequired,
-  }).isRequired,
-  dispatch: propTypes.func.isRequired,
-};
+    currencies: propTypes.shape([]),
+  }),
+  dispatch: propTypes.func,
+}.isRequired;
 
 export default connect(mapStateToProps)(WalletForm);

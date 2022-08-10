@@ -11,6 +11,7 @@ const INITIAL_STATE = {
 };
 
 const walletReducer = (state = INITIAL_STATE, { type, payload }) => {
+  console.log(type);
   switch (type) {
   case RECEIVE_CURRENCY_SUCCESS:
     delete payload.USDT;
@@ -22,6 +23,11 @@ const walletReducer = (state = INITIAL_STATE, { type, payload }) => {
     return {
       ...state,
       expenses: [...state.expenses, { ...payload }],
+    };
+  case 'DELETE_EXPENSE':
+    return {
+      ...state,
+      expenses: payload,
     };
   default:
     return state;
