@@ -29,8 +29,8 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   history: propTypes.shape({
-    push: propTypes.func.isRequired,
-  }).isRequired,
-};
+    push: propTypes.func,
+  }),
+}.isRequired;
 
 export default (Wallet);

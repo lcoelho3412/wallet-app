@@ -40,9 +40,9 @@ export default connect(mapStateToProps)(Header);
 
 Header.propTypes = {
   user: propTypes.shape({
-    email: propTypes.string.isRequired,
-  }).isRequired,
+    email: propTypes.string,
+  }),
   wallet: propTypes.shape({
-    expenses: propTypes.string.isRequired,
-  }).isRequired,
-};
+    expenses: propTypes.arrayOf,
+  }),
+}.isRequired;
